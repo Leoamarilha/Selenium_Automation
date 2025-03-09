@@ -12,16 +12,18 @@ import org.testng.annotations.Test;
 public class LoginTests {
 
     private WebDriver navegador;
+    private LoginPage loginPage;
 
     @BeforeMethod
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         navegador = new ChromeDriver();
+        loginPage = new LoginPage(navegador);
     }
 
     @Test(description = "Logar com um usuario válido")
     public void testLoginValido() {
-        LoginPage loginPage = new LoginPage(navegador);
+
         loginPage.acessarPaginaLogin();
         loginPage.logarUsuarioSenha("standard_user", "secret_sauce");
 
@@ -30,13 +32,11 @@ public class LoginTests {
 
     @Test(description = "Logar com um usuario inválido")
     public void testLoginInvalido() {
-        LoginPage loginPage = new LoginPage(navegador);
 
-        //Teste
         loginPage.acessarPaginaLogin();
         loginPage.logarUsuarioSenha("stadwadwa", "secret_sauce");
-        String mensagemErro = loginPage.mensagemErro();
 
+        String mensagemErro = loginPage.mensagemErro();
         Assert.assertEquals(mensagemErro , "Epic sadface: Username and password do not match any user in this service");
     }
 
