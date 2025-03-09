@@ -35,6 +35,7 @@ public class LoginTests {
                 .logarUsuarioSenha("dada", "secret_sauce")
                 .mensagemErro();
 
+        //Validando mensagem de erro com usuario inválido
         Assert.assertEquals(mensagemErro , "Epic sadface: Username and password do not match any user in this service");
     }
 
