@@ -32,6 +32,7 @@ public class LoginTests {
     public void testLoginInvalido() {
         LoginPage loginPage = new LoginPage(navegador);
 
+        //Teste
         loginPage.acessarPaginaLogin();
         loginPage.logarUsuarioSenha("stadwadwa", "secret_sauce");
         String mensagemErro = loginPage.mensagemErro();
