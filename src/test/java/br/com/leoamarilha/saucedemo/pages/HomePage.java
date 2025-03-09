@@ -10,12 +10,14 @@ public class HomePage  extends BasePage {
         super(navegador);
     }
 
-    public void selecionarMochilaSauceLabs() {
+    public HomePage selecionarMochilaSauceLabs() {
         navegador.findElement(By.cssSelector(".btn_primary.btn_inventory")).click();
+        return new HomePage(navegador);
     }
 
-    public void clicarBotaoCarrinho() {
+    public CartPage clicarBotaoCarrinho() {
         navegador.findElement(By.id("shopping_cart_container")).click();
+        return new CartPage(navegador);
     }
 
 }

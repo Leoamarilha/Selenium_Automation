@@ -29,24 +29,29 @@ public class CheckoutPage extends BasePage {
         super(navegador);
     }
 
-    public void preencherNome(String nome){
+    public CheckoutPage preencherNome(String nome){
         primeiroNome.sendKeys(nome);
+        return new CheckoutPage(navegador);
     }
 
-    public void preencherSobrenome(String sobrenome){
+    public CheckoutPage preencherSobrenome(String sobrenome){
         ultimoNome.sendKeys(sobrenome);
+        return new CheckoutPage(navegador);
     }
 
-    public void preencherCep(String cep){
+    public CheckoutPage preencherCep(String cep){
         postalCode.sendKeys(cep);
+        return new CheckoutPage(navegador);
     }
 
-    public void clicarBotaoContinuar(){
+    public CheckoutPage clicarBotaoContinuar(){
         botaoContinuar.click();
+        return new CheckoutPage(navegador);
     }
 
-    public void clicarBotaoFinalizar(){
+    public CheckoutPage clicarBotaoFinalizar(){
         botaoFinalizar.click();
+        return new CheckoutPage(navegador);
     }
 
     public String sucessoCompra (){

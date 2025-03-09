@@ -23,14 +23,16 @@ public class LoginPage extends BasePage {
         super(navegador);
     }
 
-    public void acessarPaginaLogin() {
+    public LoginPage acessarPaginaLogin() {
         navegador.get("https://www.saucedemo.com/v1/");
+        return new LoginPage(navegador);
     }
 
-    public void logarUsuarioSenha (String usuario, String senha) {
+    public LoginPage logarUsuarioSenha (String usuario, String senha) {
         userName.sendKeys(usuario);
         password.sendKeys(senha);
         botaoLogin.click();
+        return new LoginPage(navegador);
     }
 
     public String mensagemErro() {

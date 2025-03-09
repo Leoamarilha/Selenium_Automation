@@ -14,7 +14,8 @@ public class CartPage  extends BasePage {
         super(navegador);
     }
 
-    public void clicarBotaoCheckout () {
+    public CheckoutPage clicarBotaoCheckout () {
         botaoCheckout.click();
+        return new CheckoutPage(navegador);
     }
 }
